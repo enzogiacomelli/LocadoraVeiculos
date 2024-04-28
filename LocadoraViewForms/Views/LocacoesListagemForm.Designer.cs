@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            buttonExcluir = new Button();
+            buttonEditar = new Button();
             buttonCadastrar = new Button();
             dataGridViewLocacoes = new DataGridView();
             ColumnCliente = new DataGridViewTextBoxColumn();
@@ -38,8 +40,6 @@
             ColumnInicio = new DataGridViewTextBoxColumn();
             ColumnFim = new DataGridViewTextBoxColumn();
             ColumnId = new DataGridViewTextBoxColumn();
-            buttonEditar = new Button();
-            buttonExcluir = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLocacoes).BeginInit();
             SuspendLayout();
@@ -56,6 +56,25 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Locações";
+            // 
+            // buttonExcluir
+            // 
+            buttonExcluir.Location = new Point(605, 80);
+            buttonExcluir.Name = "buttonExcluir";
+            buttonExcluir.Size = new Size(75, 23);
+            buttonExcluir.TabIndex = 3;
+            buttonExcluir.Text = "Excluir";
+            buttonExcluir.UseVisualStyleBackColor = true;
+            // 
+            // buttonEditar
+            // 
+            buttonEditar.Location = new Point(605, 51);
+            buttonEditar.Name = "buttonEditar";
+            buttonEditar.Size = new Size(75, 23);
+            buttonEditar.TabIndex = 2;
+            buttonEditar.Text = "Editar";
+            buttonEditar.UseVisualStyleBackColor = true;
+            buttonEditar.Click += buttonEditar_Click;
             // 
             // buttonCadastrar
             // 
@@ -123,24 +142,6 @@
             ColumnId.Name = "ColumnId";
             ColumnId.ReadOnly = true;
             ColumnId.Visible = false;
-            // 
-            // buttonEditar
-            // 
-            buttonEditar.Location = new Point(605, 51);
-            buttonEditar.Name = "buttonEditar";
-            buttonEditar.Size = new Size(75, 23);
-            buttonEditar.TabIndex = 2;
-            buttonEditar.Text = "Editar";
-            buttonEditar.UseVisualStyleBackColor = true;
-            // 
-            // buttonExcluir
-            // 
-            buttonExcluir.Location = new Point(605, 80);
-            buttonExcluir.Name = "buttonExcluir";
-            buttonExcluir.Size = new Size(75, 23);
-            buttonExcluir.TabIndex = 3;
-            buttonExcluir.Text = "Excluir";
-            buttonExcluir.UseVisualStyleBackColor = true;
             // 
             // LocacoesListagemForm
             // 

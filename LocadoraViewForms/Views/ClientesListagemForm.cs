@@ -17,6 +17,7 @@ namespace LocadoraViewForms.Views
         {
             var form = new ClientesCadastroForm();
             form.ShowDialog();
+            CarregaListagemClientes();
         }
 
 

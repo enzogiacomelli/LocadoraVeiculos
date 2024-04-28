@@ -21,6 +21,7 @@ namespace LocadoraViewForms.Views
         {
             var form = new VeiculoCadastroForm();
             form.ShowDialog();
+            CarregarListagemVeiculos();
         }
 
         private void CarregarListagemVeiculos()

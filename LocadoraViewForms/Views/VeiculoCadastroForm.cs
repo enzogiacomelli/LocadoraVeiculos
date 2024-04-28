@@ -42,6 +42,7 @@ namespace LocadoraViewForms
 
             veiculoController.Cadastrar(veiculo);
             Limpar();
+            this.Close();
         }
 
         public void Limpar()

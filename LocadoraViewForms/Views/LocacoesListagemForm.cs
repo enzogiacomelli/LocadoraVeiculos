@@ -46,5 +46,10 @@ namespace LocadoraViewForms.Views
             form.ShowDialog();
             CarregarListagemLocacoes();
         }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ainda n fiz");
+        }
     }
 }
