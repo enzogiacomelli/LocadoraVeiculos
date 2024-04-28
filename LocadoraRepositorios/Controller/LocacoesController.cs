@@ -21,17 +21,24 @@ namespace LocadoraRepositorios.Controller
             string insertQuery = "INSERT INTO Locacoes (ClienteId, VeiculoId, Diarias, ValorFinal, Inicio, Fim) VALUES (@ClienteId, @VeiculoId, @Diarias, @ValorFinal, @Inicio, @Fim);";
             var connection = sqlDb.CreateConnection();
             connection.Query(insertQuery, locacao);
-
         }
 
         public Locacao ObterPorId(int id)
         {
-            throw new NotImplementedException();
+            string selectQuery = "SELECT * FROM Locacoes WHERE Id = @Id;";
+            var connection = sqlDb.CreateConnection();
+            var locacao = new Locacao();
+            locacao.Id = id;
+            var loc = connection.QuerySingle<Locacao>(selectQuery, locacao);
+            return loc;
         }
 
         public List<Locacao> ObterTodos()
         {
-            throw new NotImplementedException();
+            string selectQuery = "SELECT * FROM Locacoes ORDER BY Inicio;";
+            var connection = sqlDb.CreateConnection();
+            var locacoes = connection.Query<Locacao>(selectQuery).ToList();
+            return locacoes;
         }
     }
 }
