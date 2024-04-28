@@ -35,6 +35,7 @@ namespace LocadoraViewForms.Views
                 row.Cells[3].Value = locacao.ValorFinal;
                 row.Cells[4].Value = locacao.Inicio;
                 row.Cells[5].Value = locacao.Fim;
+                row.Cells[6].Value = locacao.Id;
 
                 dataGridViewLocacoes.Rows.Add(row);
             }
@@ -50,6 +51,31 @@ namespace LocadoraViewForms.Views
         private void buttonEditar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("ainda n fiz");
+        }
+
+        private void buttonExcluir_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewLocacoes.SelectedRows.Count > 0)
+            {
+                var dialogResult = MessageBox.Show("Deseja continuar?", "Aviso!", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    var row = (DataGridViewRow)dataGridViewLocacoes.SelectedRows[0];
+                    var id = Convert.ToInt32(row.Cells[6].Value);
+
+                    locacoesController.Apagar(id);
+                    MessageBox.Show("Registro excluido com sucesso!");
+                    CarregarListagemLocacoes();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Selecione uma linha!", "Aviso!");
+                }
+            }
         }
     }
 }

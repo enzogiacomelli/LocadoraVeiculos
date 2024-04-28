@@ -8,7 +8,11 @@ namespace LocadoraRepositorios.Controller
     {
         public void Apagar(int id)
         {
-            throw new NotImplementedException();
+            string deleteQuery = "DELETE FROM Locacoes WHERE Id = @Id";
+            var connection = sqlDb.CreateConnection();
+            var locacao = new Locacao();
+            locacao.Id = id;
+            connection.Query(deleteQuery, locacao);
         }
 
         public void Atualizar(Locacao locacao)

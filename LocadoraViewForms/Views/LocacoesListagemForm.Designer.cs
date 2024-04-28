@@ -65,6 +65,7 @@
             buttonExcluir.TabIndex = 3;
             buttonExcluir.Text = "Excluir";
             buttonExcluir.UseVisualStyleBackColor = true;
+            buttonExcluir.Click += buttonExcluir_Click;
             // 
             // buttonEditar
             // 
